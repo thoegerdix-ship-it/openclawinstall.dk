@@ -117,6 +117,13 @@
         .features li{padding:1.1rem 0;border-bottom:1px solid rgba(50,107,255,0.07)}
         .features li strong{color:#e0e8f5}
 
+        /* Feature grid */
+        .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem 2.5rem}
+        .feature-item{border-left:3px solid #326BFF;padding-left:1rem}
+        .feature-item h3{color:#fff;font-size:1.05rem;margin-bottom:0.35rem;font-weight:600}
+        .feature-item p{color:#6b7fa3;font-size:0.92rem;line-height:1.6}
+        @media(max-width:768px){.feature-grid{grid-template-columns:1fr;gap:1.5rem}}
+
         /* Cards */
         .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
         .card{background:rgba(16,24,48,0.8);border:1px solid rgba(50,107,255,0.1);border-radius:10px;padding:1.8rem;transition:all 0.25s}
@@ -190,17 +197,34 @@
 <section id="hvad">
     <h2>Kun fantasien s&aelig;tter gr&aelig;nser</h2>
     <div class="line"></div>
-    <p style="color:#7d8fad;margin-bottom:1.5rem">Vil du have lavet en madopskrift kun med de ting der er billigst og &oslash;kologisk i dit lokale supermarked i dag? Mangler du en bogholder der kan organisere, notere og bevare dine bilag? Send et foto af en kvittering via WhatsApp, og OpenClaw l&aelig;ser bel&oslash;b, butik, dato og kategoriserer automatisk.</p>
-    <p style="color:#7d8fad;margin-bottom:1.5rem">OpenClaw er en open-source AI-assistent der k&oslash;rer p&aring; din computer. Den svarer ikke bare p&aring; sp&oslash;rgsm&aring;l &mdash; den handler. Den sender mails, booker m&oslash;der, skriver kode, styrer din browser, bestiller varer og snakker med dine kunder. Alt hvad en medarbejder g&oslash;r, minus kaffepauserne.</p>
-    <p style="color:#7d8fad;margin-bottom:2rem">En bruger gav OpenClaw $1.000 og sagde &quot;byg et produkt der tjener penge&quot; &mdash; den tjente $62.000 p&aring; tre uger. 129 startups bygget p&aring; OpenClaw har samlet tjent $283.000 p&aring; 30 dage. Det er ikke science fiction. Det sker nu.</p>
-    <ul class="features">
-        <li><strong>Billig arbejdskraft</strong> &mdash; OpenClaw drives af AI, typisk via et OpenAI abonnement til $5-50/md. Eller k&oslash;r den helt gratis med en lokal model via Ollama.</li>
-        <li><strong>50+ integrationer</strong> &mdash; Gmail, GitHub, Slack, Spotify, Philips Hue, Obsidian, Home Assistant, QuickBooks, Xero og mange flere.</li>
-        <li><strong>Styres via beskeder eller med stemmen</strong> &mdash; Skriv til den p&aring; WhatsApp, Telegram, Signal, Discord eller iMessage. Eller tal til den med Jupiter Voice &mdash; helt lokalt, gratis.</li>
-        <li><strong>Husker alt</strong> &mdash; Vedvarende hukommelse der l&aelig;rer dine vaner, pr&aelig;ferencer og arbejdsgange over tid.</li>
-        <li><strong>Bygger sine egne evner</strong> &mdash; OpenClaw kan selv oprette nye skills og automatiseringer baseret p&aring; hvad du beder den om. 13.000+ f&aelig;rdige skills er klar til brug.</li>
-        <li><strong>Vi kan ogs&aring; installere den native</strong> &mdash; P&aring; en Mac Mini, en dedikeret server eller endda en Raspberry Pi. S&aring; forbliver al data hos dig. Intet sendes til skyen med mindre du vil.</li>
-    </ul>
+    <p style="color:#7d8fad;margin-bottom:1.5rem">OpenClaw er en open-source AI-assistent der k&oslash;rer p&aring; din computer. Den svarer ikke bare p&aring; sp&oslash;rgsm&aring;l &mdash; den handler. Den sender mails, booker m&oslash;der, skriver kode, styrer din browser, bestiller varer og snakker med dine kunder.</p>
+    <p style="color:#7d8fad;margin-bottom:2.5rem">Send et foto af en kvittering via WhatsApp, og den l&aelig;ser bel&oslash;b, butik og dato automatisk. Bed den finde billige &oslash;kologiske varer i dit supermarked. Eller lad den skrive kode og lave pull requests mens du sover.</p>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>Billig arbejdskraft</h3>
+            <p>Drives af AI via et OpenAI abonnement til $5-50/md. Eller k&oslash;r den helt gratis med en lokal model via Ollama.</p>
+        </div>
+        <div class="feature-item">
+            <h3>50+ integrationer</h3>
+            <p>Gmail, GitHub, Slack, Spotify, Philips Hue, Obsidian, Home Assistant, QuickBooks, Xero og mange flere.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Beskeder eller stemme</h3>
+            <p>Skriv til den p&aring; WhatsApp, Telegram, Signal eller iMessage. Eller tal med Jupiter Voice &mdash; helt lokalt, gratis.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Husker alt</h3>
+            <p>Vedvarende hukommelse der l&aelig;rer dine vaner, pr&aelig;ferencer og arbejdsgange over tid.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Bygger sine egne evner</h3>
+            <p>OpenClaw opretter selv nye skills baseret p&aring; hvad du beder den om. 13.000+ f&aelig;rdige skills er klar.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Native installation</h3>
+            <p>Mac Mini, dedikeret server eller Raspberry Pi. Al data forbliver hos dig. Intet sendes til skyen.</p>
+        </div>
+    </div>
 </section>
 
 <!-- Use Cases -->
@@ -236,16 +260,40 @@
 <section>
     <h2>Konkret &mdash; hvad g&oslash;r den i praksis?</h2>
     <div class="line"></div>
-    <ul class="features">
-        <li><strong>Bogholder p&aring; WhatsApp</strong> &mdash; Send et foto af en kvittering, og OpenClaw l&aelig;ser bel&oslash;b, butik, dato og kategoriserer automatisk. Dine bilag organiseret uden at r&oslash;re et regneark.</li>
-        <li><strong>Bestil billige dagligvarer</strong> &mdash; OpenClaw finder de billigste &oslash;kologiske varer i dit lokale supermarked og genererer en indkøbsliste eller bestiller direkte.</li>
-        <li><strong>Morgen-digest</strong> &mdash; F&aring; en opsummering af dine mails, kalender, nyheder og to-do's f&oslash;r du st&aring;r op. Klar p&aring; WhatsApp eller Telegram.</li>
-        <li><strong>Autonom kodning</strong> &mdash; OpenClaw forst&aring;r din kodebase, skriver features, k&oslash;rer tests, laver pull requests og reviewer kode. Helt uden opsyn.</li>
-        <li><strong>Styrer dit smart home</strong> &mdash; Philips Hue, Sonos, Home Assistant. &quot;T&aelig;nd lyset og spil jazz&quot; via en besked.</li>
-        <li><strong>Snakker med dine kunder</strong> &mdash; Via WhatsApp, Telegram eller Slack. Den kvalificerer leads, svarer p&aring; sp&oslash;rgsm&aring;l og booker m&oslash;der for dig.</li>
-        <li><strong>Multi-agent teams</strong> &mdash; S&aelig;t flere OpenClaw-instanser til at arbejde sammen. En researcher, en skribent, en programmør &mdash; der koordinerer automatisk.</li>
-        <li><strong>K&oslash;rer opgaver i baggrunden</strong> &mdash; Planlagte handlinger, alerts og proaktive p&aring;mindelser mens du laver noget andet.</li>
-    </ul>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>Bogholder p&aring; WhatsApp</h3>
+            <p>Send et foto af en kvittering. OpenClaw l&aelig;ser bel&oslash;b, butik, dato og kategoriserer automatisk.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Billige dagligvarer</h3>
+            <p>Finder de billigste &oslash;kologiske varer i dit supermarked og laver en indkøbsliste eller bestiller direkte.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Morgen-digest</h3>
+            <p>Opsummering af mails, kalender, nyheder og to-do's. Klar p&aring; WhatsApp f&oslash;r du st&aring;r op.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Autonom kodning</h3>
+            <p>Skriver features, k&oslash;rer tests, laver pull requests og reviewer kode. Helt uden opsyn.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Smart home</h3>
+            <p>Philips Hue, Sonos, Home Assistant. &quot;T&aelig;nd lyset og spil jazz&quot; via en besked.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Kundeservice</h3>
+            <p>Kvalificerer leads, svarer p&aring; sp&oslash;rgsm&aring;l og booker m&oslash;der via WhatsApp, Telegram eller Slack.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Multi-agent teams</h3>
+            <p>Flere OpenClaw-instanser der arbejder sammen. En researcher, en skribent, en programmør.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Baggrundsopgaver</h3>
+            <p>Planlagte handlinger, alerts og proaktive p&aring;mindelser mens du laver noget andet.</p>
+        </div>
+    </div>
     <h3 style="color:#fff;margin-top:2.5rem;margin-bottom:0.8rem;font-size:1.05rem">Integrationer</h3>
     <div class="tags">
         <span class="tag">WhatsApp</span>
