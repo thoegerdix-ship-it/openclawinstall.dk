@@ -3,27 +3,371 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenClaw Install</title>
+    <title>OpenClaw Install - Få din private AI-assistent sat op</title>
+    <meta name="description" content="Vi installerer og opsætter OpenClaw på din computer. En open-source AI-assistent der kører lokalt, så dine data forbliver private. For virksomheder og private.">
+    <link rel="canonical" href="https://openclawinstall.dk/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="OpenClaw Install - Få din private AI-assistent sat op">
+    <meta property="og:description" content="Vi installerer OpenClaw på din computer. Dine data forbliver private. For virksomheder og private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://openclawinstall.dk/">
+    <meta property="og:locale" content="da_DK">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="OpenClaw Install - Få din private AI-assistent sat op">
+    <meta name="twitter:description" content="Vi installerer OpenClaw på din computer. Dine data forbliver private.">
+
+    <!-- Schema: ProfessionalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "OpenClaw Install",
+        "url": "https://openclawinstall.dk",
+        "email": "info@openclawinstall.dk",
+        "description": "Vi installerer og opsætter OpenClaw - en open-source AI-assistent der kører lokalt på din computer.",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Denmark"
+        },
+        "serviceType": "AI Assistant Installation and Configuration"
+    }
+    </script>
+
+    <!-- Schema: FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Hvad er OpenClaw?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OpenClaw er en gratis, open-source AI-assistent skabt af Peter Steinberger. Den kører lokalt på din computer og kan styre mails, kalender, kode, smart home og meget mere via WhatsApp, Telegram, Slack eller andre beskedtjenester."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Er mine data sikre med OpenClaw?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja. OpenClaw kører på din egen maskine. Dine samtaler, filer og præferencer forlader aldrig din computer. Du kan vælge en lokal AI-model via Ollama, så absolut intet sendes til skyen."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hvad koster installation af OpenClaw?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Selve OpenClaw er gratis. Vi tager et engangsbeløb eller timepris for opsætning og tilpasning til dine behov. Kontakt os for et uforpligtende tilbud."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kræver OpenClaw teknisk viden?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ikke når vi sætter det op for dig. Efter installation styrer du det hele via beskeder i WhatsApp, Telegram eller den beskedtjeneste du foretrækker."
+                }
+            }
+        ]
+    }
+    </script>
+
     <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0a0a0a;
-            color: #fff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            text-align: center;
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0b1120;color:#c8d4e6;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;font-size:17px}
+        a{color:#FF7A00;text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        /* Nav */
+        nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(11,17,32,0.97);border-bottom:1px solid rgba(50,107,255,0.1);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-0.02em}
+        .logo span{color:#326BFF}
+        nav ul{list-style:none;display:flex;gap:2rem}
+        nav ul li a{color:#6b7fa3;font-size:0.9rem;transition:color 0.2s}
+        nav ul li a:hover{color:#fff;text-decoration:none}
+        .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0.5rem}
+        .hamburger span{display:block;width:22px;height:2px;background:#fff}
+
+        /* Hero */
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;background:radial-gradient(ellipse at 50% 0%,rgba(50,107,255,0.08) 0%,transparent 60%)}
+        .hero-inner{max-width:660px}
+        .hero-tag{display:inline-block;padding:0.4rem 1rem;background:rgba(50,107,255,0.1);border:1px solid rgba(50,107,255,0.2);border-radius:20px;font-size:0.85rem;color:#326BFF;margin-bottom:1.5rem}
+        .hero h1{font-size:2.8rem;color:#fff;margin-bottom:1.2rem;line-height:1.15;letter-spacing:-0.03em}
+        .hero h1 em{font-style:normal;color:#326BFF}
+        .hero p{font-size:1.2rem;color:#7d8fad;margin-bottom:2.5rem;line-height:1.7}
+        .btn{display:inline-block;padding:0.95rem 2.4rem;background:#FF7A00;color:#fff;font-size:1rem;border-radius:6px;font-weight:600;transition:all 0.2s;box-shadow:0 4px 20px rgba(255,122,0,0.25)}
+        .btn:hover{background:#e86e00;text-decoration:none;box-shadow:0 4px 25px rgba(255,122,0,0.35)}
+        .btn-ghost{background:transparent;border:1px solid #2a3654;color:#8899b8;margin-left:0.8rem;box-shadow:none}
+        .btn-ghost:hover{border-color:#326BFF;color:#fff;background:transparent;box-shadow:none}
+
+        /* Sections */
+        section{padding:5rem 2rem;max-width:820px;margin:0 auto}
+        h2{font-size:1.8rem;color:#fff;margin-bottom:0.4rem;letter-spacing:-0.02em}
+        .sub{color:#4e6182;margin-bottom:2rem;font-size:1.05rem}
+        .line{width:50px;height:3px;background:#326BFF;margin-bottom:2rem;border-radius:2px}
+
+        /* Feature list */
+        .features{list-style:none}
+        .features li{padding:1.1rem 0;border-bottom:1px solid rgba(50,107,255,0.07)}
+        .features li strong{color:#e0e8f5}
+
+        /* Cards */
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+        .card{background:rgba(16,24,48,0.8);border:1px solid rgba(50,107,255,0.1);border-radius:10px;padding:1.8rem;transition:all 0.25s}
+        .card:hover{border-color:rgba(50,107,255,0.3);background:rgba(20,30,55,0.9)}
+        .card h3{color:#fff;margin-bottom:0.5rem;font-size:1.1rem}
+        .card p{color:#6b7fa3;font-size:0.95rem}
+        .card-icon{font-size:1.6rem;margin-bottom:0.8rem}
+
+        /* Tags */
+        .tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
+        .tag{background:rgba(50,107,255,0.08);border:1px solid rgba(50,107,255,0.12);border-radius:4px;padding:0.35rem 0.8rem;font-size:0.85rem;color:#6b8cc7}
+
+        /* FAQ */
+        details{border-bottom:1px solid rgba(50,107,255,0.07);padding:1.1rem 0}
+        summary{color:#e0e8f5;font-size:1rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+        summary::after{content:"+";color:#326BFF;font-size:1.3rem;font-weight:300}
+        details[open] summary::after{content:"\2212"}
+        details p{color:#6b7fa3;margin-top:0.7rem;font-size:0.95rem}
+
+        /* CTA */
+        .cta-block{text-align:center;padding:5rem 2rem;background:rgba(50,107,255,0.03);border-top:1px solid rgba(50,107,255,0.08)}
+        .cta-block h2{margin-bottom:0.8rem}
+        .cta-block p{color:#5d7399;max-width:520px;margin:0 auto 2rem;font-size:1.05rem}
+
+        /* Footer */
+        footer{text-align:center;padding:2rem;color:#283046;font-size:0.8rem;border-top:1px solid rgba(50,107,255,0.05)}
+
+        /* Mobile */
+        @media(max-width:768px){
+            nav ul{display:none}
+            nav ul.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(11,17,32,0.98);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid rgba(50,107,255,0.1)}
+            .hamburger{display:flex}
+            .hero h1{font-size:2rem}
+            .hero p{font-size:1.05rem}
+            .grid{grid-template-columns:1fr}
+            .btn-ghost{margin-left:0;margin-top:0.8rem}
+            .hero .btns{display:flex;flex-direction:column;align-items:center;gap:0.5rem}
         }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        p { color: #888; font-size: 1.2rem; }
     </style>
 </head>
 <body>
-    <div>
-        <h1>OpenClaw Install</h1>
-        <p>Under konstruktion</p>
+
+<nav>
+    <div class="logo">OpenClaw<span>Install</span></div>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <ul>
+        <li><a href="#hvad">OpenClaw</a></li>
+        <li><a href="#usecases">Use Cases</a></li>
+        <li><a href="#sikkerhed">Sikkerhed</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt os</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-inner">
+        <div class="hero-tag">Open-source &middot; Privat &middot; Lokal</div>
+        <h1>Tænk hvis du havde en <em>medarbejder der aldrig sov</em></h1>
+        <p>OpenClaw er en AI-assistent der kører direkte på din computer. Den besvarer mails, styrer din kalender, skriver kode, automatiserer opgaver og snakker med dine kunder &mdash; mens dine data aldrig forlader din maskine. Vi sætter den op for dig.</p>
+        <div class="btns">
+            <a href="#kontakt" class="btn">Fortæl os hvad du har brug for</a>
+            <a href="#hvad" class="btn btn-ghost">Se hvad OpenClaw kan</a>
+        </div>
     </div>
+</div>
+
+<!-- Hvad er OpenClaw -->
+<section id="hvad">
+    <h2>Hvad er OpenClaw?</h2>
+    <div class="line"></div>
+    <p style="color:#7d8fad;margin-bottom:1.5rem">OpenClaw er en gratis, open-source AI-assistent skabt af Peter Steinberger. Den kører direkte p&aring; din computer &mdash; Mac, Windows eller Linux. Du skriver til den via WhatsApp, Telegram, Slack eller en anden beskedtjeneste, og den udf&oslash;rer opgaverne for dig. Ikke bare svar p&aring; sp&oslash;rgsm&aring;l &mdash; den handler.</p>
+    <p style="color:#7d8fad;margin-bottom:2rem">Den sender mails. Booker m&oslash;der. Redigerer filer. Styrer din browser. K&oslash;rer kode. Og alt gemmes lokalt som simple filer p&aring; din maskine. Ingen database, ingen sky, ingen abonnementer.</p>
+    <ul class="features">
+        <li><strong>Kører p&aring; din maskine</strong> &mdash; Dine data forbliver hos dig. Intet sendes til skyen med mindre du vil.</li>
+        <li><strong>Open-source og gratis</strong> &mdash; Al kode er offentlig. Ingen skjulte omkostninger. Ingen abonnementer.</li>
+        <li><strong>50+ integrationer</strong> &mdash; Gmail, GitHub, Slack, Spotify, Philips Hue, Obsidian, Home Assistant og mange flere.</li>
+        <li><strong>Styres via beskeder</strong> &mdash; Skriv til den p&aring; WhatsApp, Telegram, Signal, Discord eller iMessage.</li>
+        <li><strong>Husker alt</strong> &mdash; Vedvarende hukommelse der l&aelig;rer dine vaner, pr&aelig;ferencer og arbejdsgange over tid.</li>
+        <li><strong>Bygger sine egne evner</strong> &mdash; OpenClaw kan selv oprette nye skills og automatiseringer baseret p&aring; hvad du beder den om.</li>
+    </ul>
+</section>
+
+<!-- Use Cases -->
+<section id="usecases">
+    <h2>Hvad kan OpenClaw g&oslash;re for din virksomhed?</h2>
+    <p class="sub">Det korte svar: tage de opgaver der tager din tid, uden at tage dit privatliv.</p>
+    <div class="line"></div>
+    <div class="grid">
+        <div class="card">
+            <div class="card-icon">&#127793;</div>
+            <h3>Startups</h3>
+            <p>Du har ikke r&aring;d til fem ansatte endnu. OpenClaw besvarer kundehenvendelser, h&aring;ndterer mails, booker m&oslash;der, skriver kode og laver pull requests. En medarbejder der arbejder 24/7 og koster en br&oslash;kdel.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">&#127970;</div>
+            <h3>Etablerede virksomheder</h3>
+            <p>Giv hver medarbejder en personlig AI-assistent der integrerer med jeres systemer. Automatisér rapporter, m&oslash;deplanlægning, rejsebooking, udgiftsrapportering og daglige workflows. Data forbliver p&aring; jeres servere.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">&#128187;</div>
+            <h3>Udviklere</h3>
+            <p>OpenClaw forstår din kodebase, kører shell-kommandoer, laver tests, genererer PR's og skriver dokumentation. Den styrer din browser og automatiserer det kedelige, s&aring; du kan fokusere p&aring; det vigtige.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">&#127968;</div>
+            <h3>Privatpersoner</h3>
+            <p>Send en besked fra din telefon: &quot;ryd min indbakke&quot;, &quot;t&aelig;nd lyset i stuen&quot;, &quot;hvad har jeg i kalenderen i morgen?&quot;. OpenClaw klarer det. Ingen abonnement, ingen data i skyen.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Konkrete eksempler -->
+<section>
+    <h2>Konkret &mdash; hvad g&oslash;r den i praksis?</h2>
+    <div class="line"></div>
+    <ul class="features">
+        <li><strong>Besvarer mails og rydder din indbakke</strong> &mdash; Du siger hvad den skal svare, og den g&oslash;r det. Eller den sorterer og prioriterer automatisk.</li>
+        <li><strong>Styrer din kalender</strong> &mdash; Booker m&oslash;der, checker ind til fly, og s&aelig;tter p&aring;mindelser.</li>
+        <li><strong>Skriver og kører kode</strong> &mdash; Fra simple scripts til pull requests med tests. Den kan ogs&aring; reviewe andres kode.</li>
+        <li><strong>Automatiserer dit browser-arbejde</strong> &mdash; Udfylder formularer, samler data fra websider, logger ind p&aring; tjenester.</li>
+        <li><strong>Styrer dit smart home</strong> &mdash; Philips Hue, Sonos, Home Assistant. &quot;T&aelig;nd lyset og spil jazz&quot; via en besked.</li>
+        <li><strong>Holder styr p&aring; dokumenter</strong> &mdash; Opretter, redigerer og s&oslash;ger i Obsidian, Notion, Apple Notes og mere.</li>
+        <li><strong>K&oslash;rer opgaver i baggrunden</strong> &mdash; Planlagte handlinger, alerts og proaktive p&aring;mindelser mens du laver noget andet.</li>
+        <li><strong>Snakker med dine kunder</strong> &mdash; Via WhatsApp, Telegram eller Slack. Den kan kvalificere leads og svare p&aring; de mest stillede sp&oslash;rgsm&aring;l.</li>
+    </ul>
+    <h3 style="color:#fff;margin-top:2.5rem;margin-bottom:0.8rem;font-size:1.05rem">Integrationer</h3>
+    <div class="tags">
+        <span class="tag">WhatsApp</span>
+        <span class="tag">Telegram</span>
+        <span class="tag">Slack</span>
+        <span class="tag">Discord</span>
+        <span class="tag">Signal</span>
+        <span class="tag">iMessage</span>
+        <span class="tag">Gmail</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">Spotify</span>
+        <span class="tag">Philips Hue</span>
+        <span class="tag">Obsidian</span>
+        <span class="tag">Notion</span>
+        <span class="tag">Home Assistant</span>
+        <span class="tag">Apple Notes</span>
+        <span class="tag">1Password</span>
+        <span class="tag">Trello</span>
+        <span class="tag">Twitter/X</span>
+        <span class="tag">Sonos</span>
+        <span class="tag">Microsoft Teams</span>
+        <span class="tag">Google Chat</span>
+        <span class="tag">+30 flere</span>
+    </div>
+</section>
+
+<!-- Sikkerhed -->
+<section id="sikkerhed">
+    <h2>Privatliv og sikkerhed</h2>
+    <p class="sub">Du bestemmer hvad der forbliver p&aring; din maskine. Og hvad der ikke g&oslash;r.</p>
+    <div class="line"></div>
+    <ul class="features">
+        <li><strong>Alt k&oslash;rer lokalt</strong> &mdash; OpenClaw k&oslash;rer p&aring; din egen maskine. Dine samtaler, filer og hukommelse forlader aldrig din computer.</li>
+        <li><strong>100% offline er muligt</strong> &mdash; Med Ollama eller LM Studio k&oslash;rer du en AI-model der er helt offline. Absolut intet sendes nogen steder hen.</li>
+        <li><strong>Eller brug en cloud-model</strong> &mdash; Foretr&aelig;kker du Claude, GPT eller Gemini? S&aring; sendes kun dine prompts til den udbyder du v&aelig;lger. Al hukommelse og alle filer forbliver lokalt.</li>
+        <li><strong>Open-source</strong> &mdash; Al kode er offentlig p&aring; GitHub. Ingen skjulte bagd&oslash;re, ingen sporing, ingen overraskelser.</li>
+        <li><strong>Simple filer</strong> &mdash; Alt gemmes som Markdown og YAML p&aring; din harddisk. Du kan inspicere, sikkerhedskopiere eller slette det n&aring;r som helst.</li>
+        <li><strong>Du s&aelig;tter gr&aelig;nserne</strong> &mdash; Du v&aelig;lger pr&aelig;cis hvilke tilladelser OpenClaw har. Intet sker uden dit samtykke.</li>
+        <li><strong>Docker-isolation</strong> &mdash; K&oslash;r OpenClaw i en sandkasse for ekstra sikkerhed. API-n&oslash;gler holdes uden for containeren.</li>
+    </ul>
+</section>
+
+<!-- Vores service -->
+<section>
+    <h2>Vi g&oslash;r det nemt for dig</h2>
+    <p class="sub">Du skal ikke v&aelig;re teknisk. Det er det vi er.</p>
+    <div class="line"></div>
+    <div class="grid">
+        <div class="card">
+            <h3>Installation og ops&aelig;tning</h3>
+            <p>Vi installerer OpenClaw p&aring; din computer, konfigurerer det og s&oslash;rger for at alt virker med dine systemer.</p>
+        </div>
+        <div class="card">
+            <h3>Tilpasset til dine behov</h3>
+            <p>Vi bygger custom integrationer, workflows og plugins der passer til pr&aelig;cis den m&aring;de du eller dit firma arbejder.</p>
+        </div>
+        <div class="card">
+            <h3>Vi kommer ud til jer</h3>
+            <p>Vi sender en programmør eller web-integrator direkte til jer. Vi ser jeres setup og finder den bedste l&oslash;sning.</p>
+        </div>
+        <div class="card">
+            <h3>Eller remote</h3>
+            <p>Vi kan ogs&aring; l&oslash;se det hele over nettet. Hvad der passer bedst for dig.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <h2>Sp&oslash;rgsm&aring;l og svar</h2>
+    <div class="line"></div>
+
+    <details>
+        <summary>Hvad koster det?</summary>
+        <p>OpenClaw er gratis og open-source. Du betaler kun for den AI-model du v&aelig;lger (din egen API-n&oslash;gle). Vi tager et engangsbel&oslash;b eller timepris for installation og tilpasning. Skriv til os for et uforpligtende tilbud.</p>
+    </details>
+
+    <details>
+        <summary>Kr&aelig;ver det teknisk viden?</summary>
+        <p>Nej. Det er derfor vi er her. Vi s&aelig;tter det hele op og s&oslash;rger for at alt virker. Bagefter styrer du det ved at skrive beskeder i WhatsApp, Telegram eller den app du foretr&aelig;kker.</p>
+    </details>
+
+    <details>
+        <summary>Hvilke platforme virker det p&aring;?</summary>
+        <p>OpenClaw kører p&aring; Mac, Windows og Linux. Du kommunikerer med den via WhatsApp, Telegram, Slack, Discord, Signal, iMessage, Microsoft Teams og mange flere.</p>
+    </details>
+
+    <details>
+        <summary>Kan mine data virkelig forblive helt private?</summary>
+        <p>Ja. Hvis du v&aelig;lger en lokal AI-model via Ollama eller LM Studio, forlader absolut ingen data din computer. V&aelig;lger du en cloud-model som Claude eller GPT, sendes kun dine prompts til den udbyder. Al hukommelse og alle filer forbliver lokalt.</p>
+    </details>
+
+    <details>
+        <summary>Kan I tilpasse det til min virksomhed?</summary>
+        <p>Ja. Vi finder en l&oslash;sning der passer pr&aelig;cis til jeres behov. Vi kan bygge custom integrationer, plugins og workflows, og vi kan komme ud til jer eller arbejde remote.</p>
+    </details>
+
+    <details>
+        <summary>Hvad hvis noget g&aring;r galt efter ops&aelig;tning?</summary>
+        <p>Vi tilbyder support efter installation. Skriv til os, s&aring; hjælper vi dig videre.</p>
+    </details>
+
+    <details>
+        <summary>Kan I komme ud til os?</summary>
+        <p>Ja. Vi sender en programmør eller web-integrator direkte ud til jer. Vi kan ogs&aring; l&oslash;se det hele remote &mdash; hvad der passer bedst.</p>
+    </details>
+
+    <details>
+        <summary>Hvad er forskellen p&aring; OpenClaw og ChatGPT?</summary>
+        <p>ChatGPT er en chatbot i skyen. Du skriver, den svarer. OpenClaw er en assistent der kører p&aring; din computer og faktisk g&oslash;r ting: sender mails, styrer din browser, redigerer filer, k&oslash;rer kode og styrer dit smart home. Dine data forbliver lokalt i stedet for at ligge p&aring; en server hos et stort firma.</p>
+    </details>
+</section>
+
+<!-- CTA -->
+<div class="cta-block" id="kontakt">
+    <h2>Fort&aelig;l os hvad du har brug for</h2>
+    <p>Skriv til os, og vi finder en l&oslash;sning der passer til dig. Vi kan sende en programmør ud til jer eller l&oslash;se det hele remote.</p>
+    <a href="mailto:request@openclawinstall.dk" class="btn">request@openclawinstall.dk</a>
+</div>
+
+<footer>
+    <p>&copy; 2026 OpenClaw Install</p>
+</footer>
+
 </body>
 </html>
