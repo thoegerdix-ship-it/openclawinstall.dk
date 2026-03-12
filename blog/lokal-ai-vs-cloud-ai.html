@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="language" content="da">
+    <meta name="author" content="OpenClaw Install">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2J489SMJJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M2J489SMJJ');
+    </script>
+
+    <title>Lokal AI vs. Cloud AI: Hvorfor dine data bør blive på din computer</title>
+    <meta name="description" content="Hvad sker der med dine data når du bruger ChatGPT? Vi sammenligner lokal AI med cloud AI og forklarer fordele og ulemper ved begge tilgange.">
+    <link rel="canonical" href="https://openclawinstall.dk/blog/lokal-ai-vs-cloud-ai.html">
+    <link rel="alternate" hreflang="da-DK" href="https://openclawinstall.dk/blog/lokal-ai-vs-cloud-ai.html">
+    <link rel="alternate" hreflang="x-default" href="https://openclawinstall.dk/blog/lokal-ai-vs-cloud-ai.html">
+
+    <meta name="theme-color" content="#0b1120">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <meta property="og:title" content="Lokal AI vs. Cloud AI: Hvorfor dine data bør blive på din computer">
+    <meta property="og:description" content="Vi sammenligner lokal AI med cloud AI og forklarer fordele og ulemper ved begge.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://openclawinstall.dk/blog/lokal-ai-vs-cloud-ai.html">
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:image" content="https://openclawinstall.dk/og-image.png">
+    <meta property="article:published_time" content="2026-03-12">
+    <meta property="article:author" content="OpenClaw Install">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lokal AI vs. Cloud AI: Dine data bør blive lokalt">
+    <meta name="twitter:description" content="Vi sammenligner lokal AI med cloud AI og forklarer fordele og ulemper.">
+    <meta name="twitter:image" content="https://openclawinstall.dk/og-image.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Lokal AI vs. Cloud AI: Hvorfor dine data bør blive på din computer",
+        "description": "En sammenligning af lokal AI og cloud AI med fokus på privatliv, sikkerhed og funktionalitet.",
+        "datePublished": "2026-03-12",
+        "author": {
+            "@type": "Organization",
+            "name": "OpenClaw Install",
+            "url": "https://openclawinstall.dk"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "OpenClaw Install"
+        },
+        "mainEntityOfPage": "https://openclawinstall.dk/blog/lokal-ai-vs-cloud-ai.html",
+        "inLanguage": "da-DK"
+    }
+    </script>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0b1120;color:#c8d4e6;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;font-size:17px}
+        a{color:#FF7A00;text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(11,17,32,0.97);border-bottom:1px solid rgba(50,107,255,0.1);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-0.02em}
+        .logo span{color:#326BFF}
+        nav ul{list-style:none;display:flex;gap:2rem}
+        nav ul li a{color:#6b7fa3;font-size:0.9rem;transition:color 0.2s}
+        nav ul li a:hover{color:#fff;text-decoration:none}
+        .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0.5rem}
+        .hamburger span{display:block;width:22px;height:2px;background:#fff}
+
+        .article{max-width:680px;margin:0 auto;padding:8rem 2rem 5rem}
+        .article .breadcrumb{color:#4e6182;font-size:0.85rem;margin-bottom:2rem}
+        .article .breadcrumb a{color:#4e6182}
+        .article .breadcrumb a:hover{color:#FF7A00}
+        .article .date{color:#4e6182;font-size:0.85rem;margin-bottom:1rem}
+        .article h1{font-size:2rem;color:#fff;margin-bottom:1.5rem;line-height:1.2;letter-spacing:-0.03em}
+        .article h2{font-size:1.4rem;color:#fff;margin:2.5rem 0 1rem;letter-spacing:-0.02em}
+        .article h3{font-size:1.15rem;color:#e0e8f5;margin:2rem 0 0.8rem}
+        .article p{color:#9aacca;margin-bottom:1.2rem;line-height:1.8}
+        .article ul,.article ol{color:#9aacca;margin:0 0 1.2rem 1.5rem}
+        .article li{margin-bottom:0.5rem;line-height:1.7}
+        .article li strong{color:#e0e8f5}
+
+        .comparison{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.5rem 0 2rem}
+        .comparison .col{background:rgba(16,24,48,0.8);border:1px solid rgba(50,107,255,0.1);border-radius:10px;padding:1.5rem}
+        .comparison .col h3{color:#fff;font-size:1.05rem;margin-bottom:0.8rem}
+        .comparison .col ul{margin-left:1.2rem}
+        .comparison .col li{font-size:0.92rem;color:#6b7fa3;margin-bottom:0.4rem}
+
+        .cta-box{background:rgba(50,107,255,0.05);border:1px solid rgba(50,107,255,0.15);border-radius:10px;padding:2rem;margin:2.5rem 0;text-align:center}
+        .cta-box h3{color:#fff;margin-bottom:0.5rem}
+        .cta-box p{color:#7d8fad;margin-bottom:1rem}
+        .btn{display:inline-block;padding:0.8rem 2rem;background:#FF7A00;color:#fff;font-size:0.95rem;border-radius:6px;font-weight:600;transition:all 0.2s;box-shadow:0 4px 20px rgba(255,122,0,0.25)}
+        .btn:hover{background:#e86e00;text-decoration:none}
+
+        footer{text-align:center;padding:2rem;color:#283046;font-size:0.8rem;border-top:1px solid rgba(50,107,255,0.05)}
+
+        @media(max-width:768px){
+            nav ul{display:none}
+            nav ul.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(11,17,32,0.98);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid rgba(50,107,255,0.1)}
+            .hamburger{display:flex}
+            .article h1{font-size:1.6rem}
+            .comparison{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="logo" style="text-decoration:none">OpenClaw<span>Install</span></a>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <ul>
+        <li><a href="/#hvad">OpenClaw</a></li>
+        <li><a href="/#usecases">Use Cases</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/#kontakt">Kontakt os</a></li>
+    </ul>
+</nav>
+
+<article class="article">
+    <div class="breadcrumb"><a href="/">Forside</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Lokal AI vs. Cloud AI</div>
+    <div class="date">12. marts 2026</div>
+    <h1>Lokal AI vs. Cloud AI: Hvorfor dine data b&oslash;r blive p&aring; din computer</h1>
+
+    <p>N&aring;r du skriver til ChatGPT, Copilot eller Gemini, sendes dine ord til en server ejet af et stort tech-selskab. Dine sp&oslash;rgsm&aring;l, dine dokumenter, dine id&eacute;er &mdash; alt sammen lagres p&aring; en andens computer. Men det beh&oslash;ver ikke v&aelig;re s&aring;dan.</p>
+
+    <h2>Hvad er cloud AI?</h2>
+    <p>Cloud AI er den model de fleste kender. Du &aring;bner en browser, skriver en besked, og f&aring;r et svar. Hele beregningen sker p&aring; en server i et datacenter &mdash; typisk i USA.</p>
+    <p>Det betyder at:</p>
+    <ul>
+        <li>Dine samtaler lagres p&aring; udbyderens servere</li>
+        <li>Dine data kan bruges til at tr&aelig;ne fremtidige modeller (medmindre du aktivt frammelder dig)</li>
+        <li>Du er afh&aelig;ngig af en internetforbindelse</li>
+        <li>Udbyderen kan &aelig;ndre vilk&aring;r, priser eller lukke tjenesten</li>
+    </ul>
+
+    <h2>Hvad er lokal AI?</h2>
+    <p>Lokal AI kører direkte p&aring; din egen computer. Ingen data sendes nogen steder hen. Du ejer modellen, du ejer dine data, og du kan bruge den offline.</p>
+    <p>Med v&aelig;rkt&oslash;jer som Ollama og LM Studio kan du k&oslash;re kraftfulde AI-modeller p&aring; en almindelig computer. Og med OpenClaw f&aring;r du en fuld AI-assistent der bruger disse modeller til at udf&oslash;re rigtige opgaver.</p>
+
+    <h2>Sammenligning</h2>
+    <div class="comparison">
+        <div class="col">
+            <h3>Cloud AI</h3>
+            <ul>
+                <li>Nemt at komme i gang</li>
+                <li>Kraftfulde modeller (GPT-4, Claude)</li>
+                <li>Kr&aelig;ver internet</li>
+                <li>Data p&aring; andres servere</li>
+                <li>M&aring;nedlig betaling</li>
+                <li>Kan bruges til tr&aelig;ning</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Lokal AI</h3>
+            <ul>
+                <li>100% privat</li>
+                <li>Virker offline</li>
+                <li>Ingen l&oslash;bende omkostninger</li>
+                <li>Du ejer alt</li>
+                <li>Kr&aelig;ver ops&aelig;tning</li>
+                <li>Modeller er lidt mindre kraftfulde</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Det bedste fra begge verdener</h2>
+    <p>Med OpenClaw beh&oslash;ver du faktisk ikke v&aelig;lge. Du kan bruge en cloud-model som Claude eller GPT-4 til de opgaver der kr&aelig;ver det st&aelig;rkeste, og en lokal model til alt det private. Uanset hvad forbliver al din hukommelse, dine filer og dine pr&aelig;ferencer p&aring; din egen maskine.</p>
+    <p>Det er en hybrid tilgang der giver dig kraften fra cloud AI med privatlivet fra lokal AI.</p>
+
+    <h2>Hvorfor er det vigtigt for virksomheder?</h2>
+    <p>Hvis dine medarbejdere bruger ChatGPT til arbejdsopgaver, sendes potentielt fortrolige oplysninger til OpenAI's servere. Interne dokumenter, kundedata, strategier &mdash; alt sammen kan ende i et datasæt du ikke kontrollerer.</p>
+    <p>Med en lokal l&oslash;sning som OpenClaw f&aring;r dine medarbejdere de samme AI-fordele, men uden risikoen. Data forbliver p&aring; jeres maskiner. Ingen tredjepart har adgang.</p>
+
+    <h2>GDPR og compliance</h2>
+    <p>For danske og europ&aelig;iske virksomheder er GDPR en reel bekymring. N&aring;r dine data forbliver p&aring; din egen maskine, eliminerer du en lang r&aelig;kke compliance-udfordringer. Der er ingen databehandleraftale at bekymre sig om, ingen tredjepartsrisici og ingen data der krydser landegr&aelig;nser.</p>
+
+    <div class="cta-box">
+        <h3>Vil du k&oslash;re AI privat?</h3>
+        <p>Vi installerer OpenClaw p&aring; din computer &mdash; med den model der passer til dig.</p>
+        <a href="mailto:request@openclawinstall.dk" class="btn">Kontakt os</a>
+    </div>
+
+    <p>L&aelig;s ogs&aring;: <a href="/blog/ai-til-smaa-virksomheder.html">AI til sm&aring; virksomheder: 7 opgaver OpenClaw kan overtage i dag</a></p>
+</article>
+
+<footer>
+    <p>&copy; 2026 OpenClaw Install</p>
+</footer>
+
+</body>
+</html>

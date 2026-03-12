@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="language" content="da">
+    <meta name="author" content="OpenClaw Install">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2J489SMJJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M2J489SMJJ');
+    </script>
+
+    <title>Blog - OpenClaw Install</title>
+    <meta name="description" content="Artikler om lokal AI, privatliv, automatisering og hvordan OpenClaw kan hjælpe din virksomhed. Tips og guides på dansk.">
+    <link rel="canonical" href="https://openclawinstall.dk/blog/">
+    <link rel="alternate" hreflang="da-DK" href="https://openclawinstall.dk/blog/">
+    <link rel="alternate" hreflang="x-default" href="https://openclawinstall.dk/blog/">
+
+    <meta name="theme-color" content="#0b1120">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog - OpenClaw Install">
+    <meta property="og:description" content="Artikler om lokal AI, privatliv, automatisering og hvordan OpenClaw kan hjælpe din virksomhed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://openclawinstall.dk/blog/">
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:image" content="https://openclawinstall.dk/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog - OpenClaw Install">
+    <meta name="twitter:description" content="Artikler om lokal AI, privatliv og automatisering på dansk.">
+    <meta name="twitter:image" content="https://openclawinstall.dk/og-image.png">
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0b1120;color:#c8d4e6;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;font-size:17px}
+        a{color:#FF7A00;text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(11,17,32,0.97);border-bottom:1px solid rgba(50,107,255,0.1);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-0.02em}
+        .logo span{color:#326BFF}
+        nav ul{list-style:none;display:flex;gap:2rem}
+        nav ul li a{color:#6b7fa3;font-size:0.9rem;transition:color 0.2s}
+        nav ul li a:hover{color:#fff;text-decoration:none}
+        .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0.5rem}
+        .hamburger span{display:block;width:22px;height:2px;background:#fff}
+
+        .page-header{padding:8rem 2rem 3rem;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(50,107,255,0.08) 0%,transparent 60%)}
+        .page-header h1{font-size:2.2rem;color:#fff;margin-bottom:0.5rem;letter-spacing:-0.03em}
+        .page-header p{color:#7d8fad;font-size:1.1rem}
+
+        .blog-list{max-width:720px;margin:0 auto;padding:2rem 2rem 5rem}
+        .blog-card{display:block;background:rgba(16,24,48,0.8);border:1px solid rgba(50,107,255,0.1);border-radius:10px;padding:2rem;margin-bottom:1.5rem;transition:all 0.25s}
+        .blog-card:hover{border-color:rgba(50,107,255,0.3);background:rgba(20,30,55,0.9);text-decoration:none}
+        .blog-card .date{color:#4e6182;font-size:0.85rem;margin-bottom:0.5rem}
+        .blog-card h2{color:#fff;font-size:1.3rem;margin-bottom:0.6rem;letter-spacing:-0.02em}
+        .blog-card p{color:#6b7fa3;font-size:0.95rem;line-height:1.6}
+        .blog-card .read-more{display:inline-block;margin-top:0.8rem;color:#FF7A00;font-size:0.9rem;font-weight:600}
+
+        footer{text-align:center;padding:2rem;color:#283046;font-size:0.8rem;border-top:1px solid rgba(50,107,255,0.05)}
+
+        @media(max-width:768px){
+            nav ul{display:none}
+            nav ul.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(11,17,32,0.98);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid rgba(50,107,255,0.1)}
+            .hamburger{display:flex}
+            .page-header h1{font-size:1.7rem}
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="logo" style="text-decoration:none">OpenClaw<span>Install</span></a>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <ul>
+        <li><a href="/#hvad">OpenClaw</a></li>
+        <li><a href="/#usecases">Use Cases</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/#kontakt">Kontakt os</a></li>
+    </ul>
+</nav>
+
+<div class="page-header">
+    <h1>Blog</h1>
+    <p>Artikler om lokal AI, privatliv og automatisering</p>
+</div>
+
+<div class="blog-list">
+    <a href="/blog/hvad-er-openclaw.html" class="blog-card">
+        <div class="date">12. marts 2026</div>
+        <h2>Hvad er OpenClaw? En komplet guide til din private AI-assistent</h2>
+        <p>OpenClaw er en open-source AI-assistent der k&oslash;rer lokalt p&aring; din computer. L&aelig;r hvad den kan, hvordan den virker, og hvorfor den er anderledes end ChatGPT og andre cloud-baserede l&oslash;sninger.</p>
+        <span class="read-more">L&aelig;s mere &rarr;</span>
+    </a>
+
+    <a href="/blog/lokal-ai-vs-cloud-ai.html" class="blog-card">
+        <div class="date">12. marts 2026</div>
+        <h2>Lokal AI vs. Cloud AI: Hvorfor dine data b&oslash;r blive p&aring; din computer</h2>
+        <p>Hvad sker der med dine data n&aring;r du bruger ChatGPT eller Copilot? Vi sammenligner lokal AI med cloud AI og forklarer hvorfor privatliv er vigtigere end nogensinde.</p>
+        <span class="read-more">L&aelig;s mere &rarr;</span>
+    </a>
+
+    <a href="/blog/ai-til-smaa-virksomheder.html" class="blog-card">
+        <div class="date">12. marts 2026</div>
+        <h2>AI til sm&aring; virksomheder: 7 opgaver OpenClaw kan overtage i dag</h2>
+        <p>Du beh&oslash;ver ikke et stort budget for at f&aring; gl&aelig;de af AI. Her er 7 konkrete m&aring;der sm&aring; virksomheder kan bruge OpenClaw til at spare tid og penge.</p>
+        <span class="read-more">L&aelig;s mere &rarr;</span>
+    </a>
+</div>
+
+<footer>
+    <p>&copy; 2026 OpenClaw Install</p>
+</footer>
+
+</body>
+</html>
